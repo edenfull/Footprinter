@@ -1,20 +1,20 @@
 <div class="container">
 	<div class="page-header">
-		<h1>Upload Your Library File(s)</h1>
+		<h1>Upload Your Library File</h1>
 	</div>
-	<p class="lead">Pick one or a few .lbr files to upload. At the moment, Footprint can only accept EAGLE XML files.</p>
+	<p class="lead">Pick an .lbr file to upload. At the moment, Footprint can only accept EAGLE XML files.</p>
 	<div ng-controller="ShareCtrl" id="upload-body">
 		<div class="fileUpload btn btn-primary">
-			<span><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Select File(s)</span>
-			<input type="file" class="upload" ng-file-select ng-model="files" ng-multiple="true" ng-accept="'.lbr'">
+			<span><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Select File</span>
+			<input type="file" file-model="file" class="upload">
 		</div>
-		<div class="panel panel-default progress-panel" ng-show="files">
-			<div class="panel-heading">Files</div>
+		<div class="panel panel-default progress-panel" ng-show="file">
+			<div class="panel-heading">File Selected</div>
 			<div class="panel-body">
-				<div ng-repeat="file in files">{{ file.name }}: {{ file.size/1000 | number: 2 }} MB </div>
+				{{ file.name }}: {{ file.size/1000 | number: 2 }} MB
 			</div>
 		</div>
-		<button class="btn btn-success" ng-click="upload(files)" ng-show="files">Upload</button>
-		<button class="btn btn-danger" ng-click="upload.abort()" ng-show="files">Cancel</button>
+		<button class="btn btn-success" ng-click="upload(file)" ng-show="file">Upload</button>
+		<button class="btn btn-danger" ng-click="upload.abort()" ng-show="file">Cancel</button>
 </div>
 <foot></foot>
