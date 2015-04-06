@@ -14,7 +14,6 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             ];
 
 						scope.guestItems = [
-                { label: "About", state: "about" },
                 { label: "Sign Up", state: "signup" },
 								{ label: "Log In", state: "login" }
             ];

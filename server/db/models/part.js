@@ -9,7 +9,6 @@ var PartSchema = new mongoose.Schema({
     mpn: { type: String },
     sku: { type: String },
     brand: { type: String },
-		image: { type: String },
     octopart: { type: String },
 		eagle: [Data.schema],
 		reviews: [Review.schema],
