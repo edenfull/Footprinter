@@ -7,12 +7,16 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
         templateUrl: 'js/common/directives/navbar/navbar.html',
         link: function (scope) {
 
-            scope.items = [
-                { label: 'Footprinter', state: 'home' },
-								{ label: 'Search', state: 'search' },
-                { label: 'Share', state: 'share' },
-                { label: 'About', state: 'about' },
-                { label: 'Members Only', state: 'membersOnly', auth: true }
+						scope.authItems = [
+                { label: "Share", state: "share" },
+                { label: "Create", state: "create" },
+								{ label: "Settings", state: "settings" }
+            ];
+
+						scope.guestItems = [
+                { label: "About", state: "about" },
+                { label: "Sign Up", state: "signup" },
+								{ label: "Log In", state: "login" }
             ];
 
             scope.user = null;

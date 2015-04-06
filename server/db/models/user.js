@@ -1,29 +1,24 @@
 'use strict';
 var crypto = require('crypto');
 var mongoose = require('mongoose');
+var validate = require("mongoose-validator");
+
+var emailValidator = validate({ validator: "isEmail", arguments: [this], message: "Please enter a valid email address."});
+
+var permLevelValidator = function(value) {
+		return /Guest|Registered|Admin/.test(value);
+};
 
 var schema = new mongoose.Schema({
-    email: {
-        type: String
-    },
-    password: {
-        type: String
-    },
-    salt: {
-        type: String
-    },
-    twitter: {
-        id: String,
-        username: String,
-        token: String,
-        tokenSecret: String
-    },
-    facebook: {
-        id: String
-    },
-    google: {
-        id: String
-    }
+		username: { type: String, required: true },
+		firstName: { type: String, required: true },
+		lastName: { type: String, required: true },
+    email: { type: String, required: true, validate: emailValidator },
+		permLevel: { type: String, required: true, validate: permLevelValidator },
+    password: { type: String },
+    salt: { type: String },
+    google: { id: String },
+		libraries: [{ type: mongoose.Schema.Types.ObjectId, ref: "Library" }]
 });
 
 // generateSalt, encryptPassword and the pre 'save' and 'correctPassword' operations
