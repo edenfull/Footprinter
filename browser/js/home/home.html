@@ -5,30 +5,31 @@
 				to open source their footprint libraries.</h2>
 			<br />
 			<p>Cut down your layout time! Find your component:</p>
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="input-group">
-						<form ng-submit="searchFor(searchStr.val)">
-							<input name="searchStr" type="text" ng-model="searchStr.val" class="form-control" placeholder="Search by MPN, SKU, brand, keyword..." />
-							<span class="input-group-btn">
-								<button class="btn btn-primary" type="button">
-									<span class=" glyphicon glyphicon-search"></span>
-								</button>
-							</span>
-						</form>
-					</div>
-				</div>
+			<div id="part-search">
+				<form ng-submit="searchFor(searchStr.val)">
+					<input name="searchStr" type="text" ng-model="searchStr.val" class="form-control" id="part-search-box" placeholder="Search by MPN, SKU, brand, keyword..." />
+					<button class="btn btn-primary" id="part-search-btn" type="button">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>	
+				</form>
 			</div>
 			<p>0 parts and counting...</p>
 		</div>
 	</div>
 	<div class="container">
 		<h4 style="text-align: center">Community members vote on the quality. <a href="#">See our highest-rated footprints.</a></h4>
+		<br />
 		<div class="row">
-			<div class="col-md-4"><h3>Import</h3><p>Let's face it. Most of our libraries are a mess. Each package is separated for inclusion in Footprinter.</p></div>
-			<div class="col-md-4"><h3>Add</h3><p>Like a shopping cart, add all of the components you want in the same library.</p></div>
-			<div class="col-md-4"><h3>Download</h3><p>Download the library file when you're ready!</p></div>
+			<div class="col-lg-4">
+				<img src="/img/ungroup.png" class="feature-symbol">
+				<h2 class="feature-title">Organize</h2><p class="feature-explain">Declutter your libraries. Import them into Footprinter to separate each part into its own package. Share your file with the community!</p></div>
+			<div class="col-lg-4">
+				<img src="/img/combine.png" class="feature-symbol">
+				<h2 class="feature-title">Consolidate</h2><p class="feature-explain">Like a shopping cart, go through your BOM and add all of the components you want from our database in the same library file.</p></div>
+			<div class="col-lg-4">
+				<img src="/img/pad.png" class="feature-symbol">
+				<h2 class="feature-title">Optimize</h2><p class="feature-explain">Download and import into your design program! Imagine the hours you are shaving off of your design time.</p></div>
 		</div>
 	</div>
-		<foot></foot>
+	<foot></foot>
 </section>
