@@ -14,8 +14,8 @@ var db = mongoose.connect(DATABASE_URI).connection;
 require("./models/review");
 require("./models/data");
 require("./models/library");
-require("./models/part");
 require('./models/user');
+require("./models/part");
 
 var startDbPromise = new Q(function (resolve, reject) {
     db.on('open', resolve);

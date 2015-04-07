@@ -6,6 +6,8 @@ var Data = mongoose.model("Data"),
 		Review = mongoose.model("Review");
 
 var PartSchema = new mongoose.Schema({
+		partName: { type: String },
+		description: { type: String },
     mpn: { type: String },
     sku: { type: String },
     brand: { type: String },

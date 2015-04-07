@@ -8,15 +8,15 @@ require('./configure')(app);
 
 app.use('/api', require('./routes'));
 
-app.use(function (req, res, next) {
+// app.use(function (req, res, next) {
 
-    if (path.extname(req.path).length > 0) {
-        res.status(404).end();
-    } else {
-        next(null);
-    }
+//     if (path.extname(req.path).length > 0) {
+//         res.status(404).end();
+//     } else {
+//         next(null);
+//     }
 
-});
+// });
 
 app.get('/*', function (req, res) {
     res.sendFile(app.get('indexHTMLPath'));
